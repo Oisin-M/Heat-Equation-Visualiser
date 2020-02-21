@@ -6,7 +6,9 @@ import {getAnimations} from './animations.js';
 const ROWS = 30;
 const COLUMNS = 70;
 const ANIMATION_SPEED_MS = 200;
-const ANIMATIONS = 10;
+const ANIMATIONS = 20;
+const DT=0.1;
+const BETA=1;
 
 let colormap = require('colormap');
 let colors = colormap({
@@ -45,7 +47,7 @@ export default class HeatEquationVisualiser extends React.Component {
   }
 
   Visualise() {
-    const animations = getAnimations(this.state.grid, ANIMATIONS);
+    const animations = getAnimations(this.state.grid, ANIMATIONS, DT, BETA);
     const points = document.getElementsByClassName('point');
     for (let i = 0; i < animations.length; i++) {
       setTimeout(() => {
