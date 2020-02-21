@@ -1,0 +1,6 @@
+.point {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  outline: 1px solid white;
+}
