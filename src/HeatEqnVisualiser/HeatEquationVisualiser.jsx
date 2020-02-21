@@ -6,7 +6,7 @@ import {getAnimations} from './animations.js';
 const ROWS = 30;
 const COLUMNS = 70;
 const ANIMATION_SPEED_MS = 200;
-const ANIMATIONS = 20;
+const ANIMATIONS = 50;
 const DT=0.1;
 const BETA=1;
 
@@ -43,14 +43,20 @@ export default class HeatEquationVisualiser extends React.Component {
       grid.push(row);
     }
   this.setState({grid});
-  console.log(grid);
+  document.getElementById('timer').innerHTML="Time: 0.00s";
   }
 
   Visualise() {
     const animations = getAnimations(this.state.grid, ANIMATIONS, DT, BETA);
     const points = document.getElementsByClassName('point');
+    const timer = document.getElementById('timer');
+    const resetbutton = document.getElementById('resetbutton');
+    const simulatebutton = document.getElementById('simulatebutton');
+    resetbutton.disabled=true;
+    simulatebutton.disabled=true;
     for (let i = 0; i < animations.length; i++) {
       setTimeout(() => {
+      timer.innerHTML = "Time: "+(i*ANIMATION_SPEED_MS/1000).toFixed(2)+"s";
       for (let j = 0; j<ROWS; j++) {
           for (let k=0; k<COLUMNS; k++){
             var points_index = j*COLUMNS + k;
@@ -61,19 +67,28 @@ export default class HeatEquationVisualiser extends React.Component {
         }
     }, (i*ANIMATION_SPEED_MS));
   }
-  //this.setState({grid: animations[animations.length-1]});
-  //console.log(this.state.grid);
+
+  setTimeout(() => {
+  timer.innerHTML = "COMPLETED";
+  resetbutton.disabled=false;
+  simulatebutton.disabled=false;
+  this.setState({grid: animations[animations.length-1]})
+  }, ANIMATIONS*ANIMATION_SPEED_MS);
   }
 
   render() {
     const {grid} = this.state;
     return (
-
       <Container fluid={true}>
-        <button onClick={() => this.resetgrid()}>resetgrid</button>
-        <button onClick={() => this.Visualise()}>Visualise</button>
+
+        <div className="margintop">
+        <h1 className="heading">2D Heat Equation with Insulating Boundary Conditions</h1>
+        </div>
+
+        <div className="timerdiv"><p className="timerp" id="timer">Time: 0.00s</p></div>
 
         <Container fluid={true}>
+        <div className="grid">
           {grid.map((row, idrow) => (
             <Row className="justify-content-center" key={idrow}>
               {row.map((point, idx) => (
@@ -86,7 +101,15 @@ export default class HeatEquationVisualiser extends React.Component {
               ))}
             </Row>
           ))}
+          </div>
         </Container>
+        <button id="resetbutton" onClick={() => this.resetgrid()}>Reset Grid</button>
+        <button id="simulatebutton" onClick={() => this.Visualise()}>Simulate for 10 Seconds</button>
+
+        <div className="margintop">
+        <h3 className="more">Find out more <a href="#">here</a></h3>
+        </div>
+
       </Container>
     );
   }

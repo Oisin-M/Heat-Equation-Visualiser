@@ -45,15 +45,65 @@ function SolveHeatEqn(array, anims, times, dt, b) {
 }
 
 function CornerSolver(array, r, c, dt, b) {
-  return 160;
+  const u_jk = array[r][c];
+  var u_jEk = 0;
+  var u_jkE = 0;
+
+  if (r==0) {
+    u_jEk = array[r+1][c];
+  }
+  else {
+    u_jEk = array[r-1][c];
+  }
+  if (c==0) {
+    u_jkE = array[r][c+1];
+  }
+  else {
+    u_jkE = array[r][c-1];
+  }
+
+  const x_contrib = 2*u_jEk - 2*u_jk;
+  const y_contrib = 2*u_jkE - 2*u_jk;
+  const du_dt=b*(x_contrib+y_contrib);
+  return u_jk+du_dt*dt;
 }
 
 function XBoundarySolver(array, r, c, dt, b) {
-  return 80;
+  const u_jk = array[r][c];
+  var u_jEk = 0;
+  const u_jk1 = array[r][c+1];
+  const u_jk_1 = array[r][c-1];
+
+  if (r==0) {
+    u_jEk = array[r+1][c];
+  }
+  else {
+    u_jEk = array[r-1][c];
+  }
+
+  const x_contrib = 2*u_jEk - 2*u_jk;
+  const y_contrib = u_jk1 - 2*u_jk + u_jk_1;
+  const du_dt=b*(x_contrib+y_contrib);
+  return u_jk+du_dt*dt;
 }
 
 function YBoundarySolver(array, r, c, dt, b) {
-  return 120;
+  const u_j1k = array[r+1][c];
+  const u_jk = array[r][c];
+  const u_j_1k = array[r-1][c];
+  var u_jkE = 0;
+
+  if (c==0) {
+    u_jkE = array[r][c+1];
+  }
+  else {
+    u_jkE = array[r][c-1];
+  }
+
+  const x_contrib = u_j1k - 2*u_jk + u_j_1k;
+  const y_contrib = 2*u_jkE - 2*u_jk;
+  const du_dt=b*(x_contrib+y_contrib);
+  return u_jk+du_dt*dt;
 }
 
 function InnerSolver(array, r, c, dt, b) {

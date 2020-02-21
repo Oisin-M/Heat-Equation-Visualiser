@@ -4,3 +4,34 @@
   background-color: black;
   outline: 1px solid black;
 }
+
+.timerdiv {
+  margin-top: 10px;
+}
+
+.timerp {
+  color: white;
+  font-size: 20px;
+}
+
+.heading {
+  color: white;
+  font-size: 40px;
+  border: 1px solid white;
+  padding-left: 10px;
+  padding-right: 10px;
+  display:inline;
+}
+
+.margintop {
+  margin-top: 30px;
+}
+
+.grid {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.more {
+  color: white;
+}
