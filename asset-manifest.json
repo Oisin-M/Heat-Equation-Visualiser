@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Heat-Equation-Visualiser/static/css/main.62c78890.chunk.css",
+    "main.js": "/Heat-Equation-Visualiser/static/js/main.66285372.chunk.js",
+    "main.js.map": "/Heat-Equation-Visualiser/static/js/main.66285372.chunk.js.map",
+    "runtime-main.js": "/Heat-Equation-Visualiser/static/js/runtime-main.253ec807.js",
+    "runtime-main.js.map": "/Heat-Equation-Visualiser/static/js/runtime-main.253ec807.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/Heat-Equation-Visualiser/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.0998c20d.chunk.js": "/Heat-Equation-Visualiser/static/js/2.0998c20d.chunk.js",
+    "static/js/2.0998c20d.chunk.js.map": "/Heat-Equation-Visualiser/static/js/2.0998c20d.chunk.js.map",
+    "index.html": "/Heat-Equation-Visualiser/index.html",
+    "precache-manifest.c871707a9c5599eab1de8d9d67976ff9.js": "/Heat-Equation-Visualiser/precache-manifest.c871707a9c5599eab1de8d9d67976ff9.js",
+    "service-worker.js": "/Heat-Equation-Visualiser/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/Heat-Equation-Visualiser/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.62c78890.chunk.css.map": "/Heat-Equation-Visualiser/static/css/main.62c78890.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.253ec807.js",
+    "static/css/2.47e06e2e.chunk.css",
+    "static/js/2.0998c20d.chunk.js",
+    "static/css/main.62c78890.chunk.css",
+    "static/js/main.66285372.chunk.js"
+  ]
+}
