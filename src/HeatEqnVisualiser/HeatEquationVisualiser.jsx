@@ -2,8 +2,16 @@ import React from 'react';
 import {Container, Row} from 'react-bootstrap';
 import './HeatEquationVisualiser.css';
 
-const ROWS = 5;//20
-const COLUMNS = 5;//50
+const ROWS = 35;
+const COLUMNS = 75;
+
+let colormap = require('colormap');
+let colors = colormap({
+    colormap: 'temperature',
+    nshades: 255,
+    format: 'hex',
+    alpha: 1
+})
 
 export default class HeatEquationVisualiser extends React.Component {
   constructor(props) {
@@ -25,7 +33,7 @@ export default class HeatEquationVisualiser extends React.Component {
     for (let i = 0; i < ROWS; i++) {
       row=[];
       for (let j = 0; j < COLUMNS; j++) {
-        row.push(randomIntFromInterval(0, 255));
+        row.push(randomIntFromInterval(154, 254));
       }
       grid.push(row);
       console.log(row);
@@ -38,10 +46,10 @@ export default class HeatEquationVisualiser extends React.Component {
     const {grid} = this.state;
     return (
 
-      <Container>
+      <Container fluid={true}>
         <button onClick={() => this.resetgrid()}>resetgrid</button>
 
-        <Container>
+        <Container fluid={true}>
           {grid.map((row, idx) => (
             <Row className="justify-content-center">
               {row.map((point, idx) => (
@@ -49,7 +57,7 @@ export default class HeatEquationVisualiser extends React.Component {
                 className="point"
                 key={idx}
                 style={{
-                  
+                  backgroundColor: colors[point]
                 }}></div>
               ))}
             </Row>
