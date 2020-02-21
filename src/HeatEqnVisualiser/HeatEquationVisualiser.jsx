@@ -3,8 +3,8 @@ import {Container, Row} from 'react-bootstrap';
 import './HeatEquationVisualiser.css';
 import {getAnimations} from './animations.js';
 
-const ROWS = 30;
-const COLUMNS = 70;
+const ROWS = (window.innerHeight-150)/30;
+const COLUMNS = (window.innerWidth)/30;
 const ANIMATION_SPEED_MS = 200;
 const ANIMATIONS = 50;
 const DT=0.1;
