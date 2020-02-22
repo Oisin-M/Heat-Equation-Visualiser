@@ -110,6 +110,10 @@ export default class HeatEquationVisualiser extends React.Component {
         <h3 className="more">Find out more <a href="#">here</a></h3>
         </div>
 
+        <div className="margintop">
+        <h5 className="note">Note: FireFox does not support this animation.</h5>
+        </div>
+
       </Container>
     );
   }
