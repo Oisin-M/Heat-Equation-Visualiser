@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Heat-Equation-Visualiser/precache-manifest.a139e5e592ec948c7150ea7db16e7066.js"
+  "/Heat-Equation-Visualiser/precache-manifest.10621167be79b5f00204da09861339cc.js"
 );
 
 self.addEventListener('message', (event) => {
