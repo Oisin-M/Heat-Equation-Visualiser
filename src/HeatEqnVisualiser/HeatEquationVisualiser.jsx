@@ -107,11 +107,11 @@ export default class HeatEquationVisualiser extends React.Component {
         <button id="simulatebutton" onClick={() => this.Visualise()}>Simulate for 10 Seconds</button>
 
         <div className="margintop">
-        <h3 className="more">Find out more <a href="#">here</a></h3>
+        <h3 className="more">Find out more <a href="http://oisin-morrison.herokuapp.com/programming/articles/heat-equation-visualiser">here</a></h3>
         </div>
 
         <div className="margintop">
-        <h5 className="note">Note: Mozilla Firefox does not support this animation.</h5>
+        <h5 className="note">Note: Please ensure your browser window is fullscreen.</h5>
         </div>
 
       </Container>
