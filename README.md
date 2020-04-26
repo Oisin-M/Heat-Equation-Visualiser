@@ -3,5 +3,4 @@
 
 Note: Please ensure you are in full screen when viewing the animation.
 
-[Being built]
 For further information, see [here](http://oisin-morrison.herokuapp.com/programming/articles/heat-equation-visualiser)
