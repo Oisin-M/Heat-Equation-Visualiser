@@ -1,4 +1,4 @@
-# View it for yourself!
+# Heat-Equation-Visualiser
 ## This project is live [here](https://oisin-m.github.io/Heat-Equation-Visualiser/)
 
 This is a heat visualisation tool I built when learning about the Heat Equation during college coursework, and it followed on from my React adventures with https://github.com/Oisin-M/Radix-Sort-Visualiser
